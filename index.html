@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Soccer Trivia Game</title>
+    <style>
+        .triviaQs{
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Here I create a Div for question slides -->
+    <div id="current-question"><h1>This is the top DIV</h1></div>
+    <br><br><br><br><br><br><br>
+    <!-- Question slides -->
+    <div id="first-question" class="triviaQs">
+        <div id="timer"></div>
+        <h1>Which country won the 1998 World Cup?</h1>
+        <br>
+        <form>
+            <input type="radio" name="choice" value="Italy"> Italy
+            <input type="radio" name="choice" value="Germany"> Germany
+            <input type="radio" name="choice" value="France"> France
+            <input type="radio" name="choice" value="Brazil"> Brazil
+        </form>
+        <button id="submitbtn"> Submit Answer</button>
+    </div>
+    <div id="second-question" class="triviaQs">
+        <div id="timer"></div>
+        <h1>Which country has won the most world cup championships?</h1>
+        <br>
+        <form>
+            <input type="radio" name="choice" value="Italy"> Italy
+            <input type="radio" name="choice" value="Germany"> Germany
+            <input type="radio" name="choice" value="France"> France
+            <input type="radio" name="choice" value="Brazil"> Brazil
+        </form>
+        <button id="submitbtn"> Submit Answer</button>
+    </div>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Script -->
+    <script src="assets/javascript/app.js"></script>
+
+</body>
+
+</html>
