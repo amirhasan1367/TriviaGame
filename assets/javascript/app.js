@@ -4,14 +4,10 @@ var number = 10;
 var intervalId;
 
 var questions = ["#first-question", "#second-question", "#third-question"];
-var answers = ["France", "Brazil", "Italy"];
+var answers = ["France", "Klose", "Brazil"];
+var j = 0;
 
-function newTrivia(q) {
-    var number = 10;
-
-}
-
-//Seeting timer
+//Setting timer
 
 function runTimer() {
     //clearInterval(intervalId);
@@ -42,38 +38,23 @@ function stop() {
 runTimer();
 $(questions[0]).show();
 //click function to submit the answer
-$("#submitbtn").on("click", function () {
-    submitAnswer()
-})
+$(".choice").on("click", function () {
 
-function submitAnswer() {
-    var radios = $('[name="choice"]');
-    console.log ("radios: "+ radios)
-    var checked = false;
-    var userAnswer;
+    var userAnswer = $(this).val();
 
-    for (i = 0; i < radios.length; i++) {
-        if (radios[i].checked) {
-            checked = true;
-            userAnswer = radios[i].value;
-        }
-    }
-    // if user click submit button without selecting any option, alert box should be say "please select choice answer".
-    if (!checked) {
-        alert("please select choice answer");
-        return;
-    }
-
-
-    // Correct answer
-    if (userAnswer === "France") {
+    //debugger;
+    if (userAnswer === answers[j]) {
         correctAs++
         console.log("correct answers: " + correctAs);
         alert("Answer is correct!");
-        
-            $(questions[0]).replaceWith($(questions[1]));
-            $(questions[1]).show();
-      
+
+        $(questions[j]).replaceWith($(questions[j + 1]));
+        function showNext(){
+            $(questions[j + 1]).show();
+        }
+        setTimeout(showNext, 2000)
+        j++
+        number =10;
 
     }
     // incorrect answer
@@ -82,11 +63,17 @@ function submitAnswer() {
         wrongAs++
         console.log("wrong answers: " + wrongAs);
         alert("Answer is wrong!");
-        for (j=1; j < questions.length, j++;){
-            $(questions[j]).replaceWith($(questions[j+1]));
-            $(questions[j+1]).show();
-        }
+        $(questions[j]).replaceWith($(questions[j + 1]));
+        $(questions[j + 1]).show();
+        j++
+        number=10;
     }
 
 
-}
+
+
+
+
+})
+
+
