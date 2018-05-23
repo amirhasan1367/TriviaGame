@@ -25,20 +25,24 @@ $(document).ready(function () {
             console.log("correct answers: " + correctAs);
             alert("Answer is correct!");
 
-            $(questions[j]).replaceWith($(questions[j + 1]));
-
-            setTimeout(showNext, 2000)
+            $(questions[j]).html("<img src='assets/images/crystal2.jpg'/>")
+            setTimeout(replaceFunction, 2000);
+            setTimeout(showNext, 3000);
         }
         // incorrect answer
 
         else {
             wrongAs++
             console.log("wrong answers: " + wrongAs);
-            alert("Answer is wrong!");
-            $(questions[j]).replaceWith($(questions[j + 1]));
+            //alert("Answer is wrong!");
+            $(questions[j]).html("<img src='assets/images/crystal2.jpg'/>")
+            replaceFunction();
             setTimeout(showNext, 2000)
         }
     })
+    function replaceFunction(){
+        $(questions[j]).replaceWith($(questions[j + 1]));
+    }
     function showNext() {
         $(questions[j + 1]).show();
         j++
@@ -46,6 +50,7 @@ $(document).ready(function () {
     }
     function runTimer() {
         clearInterval(intervalId);
+        decrement();
         intervalId = setInterval(decrement, 1000);
     }
 
