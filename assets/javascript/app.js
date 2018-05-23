@@ -23,9 +23,9 @@ $(document).ready(function () {
         if (userAnswer === answers[j]) {
             correctAs++
             console.log("correct answers: " + correctAs);
-            alert("Answer is correct!");
+            //alert("Answer is correct!");
 
-            $(questions[j]).html("<img src='assets/images/crystal2.jpg'/>")
+            $(questions[j]).html("<p>You were correct!</p><img src='assets/images/crystal2.jpg'/>")
             setTimeout(replaceFunction, 2000);
             setTimeout(showNext, 3000);
         }
@@ -35,7 +35,7 @@ $(document).ready(function () {
             wrongAs++
             console.log("wrong answers: " + wrongAs);
             //alert("Answer is wrong!");
-            $(questions[j]).html("<img src='assets/images/crystal2.jpg'/>")
+            $(questions[j]).html("<p>You were wrong!</p><img src='assets/images/crystal2.jpg'/>")
             replaceFunction();
             setTimeout(showNext, 2000)
         }
