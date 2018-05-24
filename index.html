@@ -6,34 +6,62 @@
 
     <meta charset="UTF-8">
     <title>Soccer Trivia Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
     <style>
-        .triviaQs{
+        .triviaQs {
             display: none;
+        }
+
+        .row {
+            margin-top: 200px;
+        }
+
+        #startbtn {
+            text-align: center;
+        }
+
+        body {
+            background-image: url("assets/images/world-cup2.jpg");
+            height: 70%;
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     </style>
 
 </head>
 
 <body>
-    <!-- Here I create a Div for question slides -->
-    <div id="current-question"><h1>This is the top DIV</h1></div>
-    <br><br><br><br><br><br><br>
-    <!-- Question slides -->
-    <div id="first-question" class="triviaQs">
-        <div id="timer"></div>
-        <h1>Which country won the 1998 World Cup?</h1>
-        <br>
-        <form>
-            <input class="choice" type="radio" name="choice" value="Italy"> Italy
-            <input class="choice" type="radio" name="choice" value="Germany"> Germany
-            <input class="choice" type="radio" name="choice" value="France"> France
-            <input class="choice" type="radio" name="choice" value="Brazil"> Brazil
-        </form>
-        
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" style="text-align:center;">
+                <div id="q1" class="triviaQs">
+                    <div id="timer"></div>
+                    <h1>Which country won the 2006 World Cup?</h1>
+                    <br>
+                    <form>
+                        <input class="choice" type="radio" name="choice" value="Italy"> Italy
+                        <input class="choice" type="radio" name="choice" value="Germany"> Germany
+                        <input class="choice" type="radio" name="choice" value="France"> France
+                        <input class="choice" type="radio" name="choice" value="Brazil"> Brazil
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-12" style="text-align:center;">
+                <button id="startbtn" type="button" class="btn btn-success btn-lg">Click HERE to Begin the World Cup Trivia</button>
+            </div>
+        </div>
     </div>
-    <div id="second-question" class="triviaQs">
+    <!-- Question slides -->
+
+    <div id="q2" class="triviaQs">
         <div id="timer"></div>
-        <h1>Who was the top scorer of the 2006 World Cup?</h1>
+        <h1>Who was the top scorer of the 2002 World Cup?</h1>
         <br>
         <form>
             <input class="choice" type="radio" name="choice" value="Ronaldo"> Ronaldo
@@ -41,9 +69,9 @@
             <input class="choice" type="radio" name="choice" value="Messi"> Messi
             <input class="choice" type="radio" name="choice" value="Sukur"> Sukur
         </form>
-        
+
     </div>
-    <div id="third-question" class="triviaQs">
+    <div id="q3" class="triviaQs">
         <div id="timer"></div>
         <h1>Which country has the most World cup championships?</h1>
         <br>
@@ -53,8 +81,44 @@
             <input class="choice" type="radio" name="choice" value="Russia"> Russia
             <input class="choice" type="radio" name="choice" value="Germany"> Germany
         </form>
-        
-    </div>  
+
+    </div>
+    <div id="q4" class="triviaQs">
+        <div id="timer"></div>
+        <h1>Which player has scored the most goals in the World Cup history?</h1>
+        <br>
+        <form>
+            <input class="choice" type="radio" name="choice" value="Ronaldo"> Ronaldo
+            <input class="choice" type="radio" name="choice" value="Klose"> Klose
+            <input class="choice" type="radio" name="choice" value="Messi"> Messi
+            <input class="choice" type="radio" name="choice" value="Pele"> Pele
+        </form>
+
+    </div>
+    <div id="q5" class="triviaQs">
+        <div id="timer"></div>
+        <h1>Which country has the the first ever World Cup?</h1>
+        <br>
+        <form>
+            <input class="choice" type="radio" name="choice" value="Argentina"> Argentina
+            <input class="choice" type="radio" name="choice" value="Brazil"> Brazil
+            <input class="choice" type="radio" name="choice" value="Russia"> Russia
+            <input class="choice" type="radio" name="choice" value="Uruguay"> Uruguay
+        </form>
+
+    </div>
+    <div id="q6" class="triviaQs">
+        <div id="timer"></div>
+        <h1>Which country hosted the 1994 World Cup?</h1>
+        <br>
+        <form>
+            <input class="choice" type="radio" name="choice" value="USA"> USA
+            <input class="choice" type="radio" name="choice" value="Brazil"> Brazil
+            <input class="choice" type="radio" name="choice" value="England"> England
+            <input class="choice" type="radio" name="choice" value="Germany"> Germany
+        </form>
+
+    </div>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
