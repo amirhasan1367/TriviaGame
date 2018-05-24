@@ -33,7 +33,7 @@ $(document).ready(function () {
                 $(questions[j]).html("<h4>You were correct!</h4><img src=" + images[j] + " width='300px'>")
                 setTimeout(replaceFunction, 3000);
                 setTimeout(showNext, 4000);
-                console.log("j is : " + j);
+                //console.log("j is : " + j);
             }
             if (j == questions.length - 1) {
                 $(questions[j]).html("<h4>You were correct!</h4><img src=" + images[j] + " width='300px'>")
