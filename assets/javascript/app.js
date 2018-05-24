@@ -25,23 +25,37 @@ $(document).ready(function () {
 
         //debugger;
         if (userAnswer === answers[j]) {
-            correctAs++
-            //console.log("correct answers: " + correctAs);
-            //alert("Answer is correct!");
+            if (j < questions.length - 1) {
+                correctAs++
+                //console.log("correct answers: " + correctAs);
+                //alert("Answer is correct!");
 
-            $(questions[j]).html("<h4>You were correct!</h4><img src=" + images[j] + " width='300px'>")
-            setTimeout(replaceFunction, 2000);
-            setTimeout(showNext, 3000);
+                $(questions[j]).html("<h4>You were correct!</h4><img src=" + images[j] + " width='300px'>")
+                setTimeout(replaceFunction, 2000);
+                setTimeout(showNext, 3000);
+                console.log("j is : " + j);
+            }
+            if (j == questions.length - 1) {
+                $(questions[j]).html("<h4>You were correct!</h4><img src=" + images[j] + " width='300px'>")
+                setTimeout(finalScore, 4000);
+            }
         }
         // incorrect answer
 
-        else {
-            wrongAs++
-            //console.log("wrong answers: " + wrongAs);
-            //alert("Answer is wrong!");
-            $(questions[j]).html("<h4>Wrong answer! The correct answer is: " + answers[j] + "</h4><img src=" + images[j] + " width='300px'>")
-            setTimeout(replaceFunction, 2000);
-            setTimeout(showNext, 3000);
+        else if (userAnswer !== answers[j]) {
+            if (j < questions.length - 1) {
+                wrongAs++
+                //console.log("wrong answers: " + wrongAs);
+                //alert("Answer is wrong!");
+                $(questions[j]).html("<h4>Wrong answer! The correct answer is: " + answers[j] + "</h4><img src=" + images[j] + " width='300px'>")
+                setTimeout(replaceFunction, 2000);
+                setTimeout(showNext, 3000);
+            }
+            if (j == questions.length - 1) {
+                $(questions[j]).html("<h4>You were correct!</h4><img src=" + images[j] + " width='300px'>")
+                setTimeout(finalScore, 4000);
+            }
+
         }
     })
     function replaceFunction() {
@@ -81,6 +95,10 @@ $(document).ready(function () {
     function stop() {
 
         clearInterval(intervalId);
+    }
+
+    function finalScore(){
+        $(questions[j]).html("<h4>You correctly answered " + correctAs + " of " + questions.length + " questions</h4>")
     }
 
 })
