@@ -31,8 +31,8 @@ $(document).ready(function () {
                 //alert("Answer is correct!");
 
                 $(questions[j]).html("<h4>You were correct!</h4><img src=" + images[j] + " width='300px'>")
-                setTimeout(replaceFunction, 2000);
-                setTimeout(showNext, 3000);
+                setTimeout(replaceFunction, 3000);
+                setTimeout(showNext, 4000);
                 console.log("j is : " + j);
             }
             if (j == questions.length - 1) {
@@ -47,12 +47,12 @@ $(document).ready(function () {
                 wrongAs++
                 //console.log("wrong answers: " + wrongAs);
                 //alert("Answer is wrong!");
-                $(questions[j]).html("<h4>Wrong answer! The correct answer is: " + answers[j] + "</h4><img src=" + images[j] + " width='300px'>")
-                setTimeout(replaceFunction, 2000);
-                setTimeout(showNext, 3000);
+                $(questions[j]).html("<h4>Wrong answer! The correct answer is: <strong>" + answers[j] + "</strong></h4><img src=" + images[j] + " width='300px'>")
+                setTimeout(replaceFunction, 3000);
+                setTimeout(showNext, 4000);
             }
             if (j == questions.length - 1) {
-                $(questions[j]).html("<h4>You were correct!</h4><img src=" + images[j] + " width='300px'>")
+                $(questions[j]).html("<h4>Wrong answer! The correct answer is: <strong>" + answers[j] + "</strong></h4><img src=" + images[j] + " width='300px'>")
                 setTimeout(finalScore, 4000);
             }
 
@@ -79,15 +79,25 @@ $(document).ready(function () {
 
         $("#timer").html("<h3>Time left: " + number + " S</h3>");
 
-        if (number === 0) {
+        if (number === 0 && j < questions.length - 1 ) {
 
             //stop();
             //alert("time is up!");
             wrongAs++;
             //console.log("wrong answers: " + wrongAs);
-            $(questions[j]).html("<h4>Your time is up! The correct answer was: " + answers[j] + "</h4><img src=" + images[j] + " width='300px'>")
-            setTimeout(replaceFunction, 2000);
-            setTimeout(showNext, 3000);
+            $(questions[j]).html("<h4>Your time is up! The correct answer was: <strong>" + answers[j] + "</strong></h4><img src=" + images[j] + " width='300px'>")
+            setTimeout(replaceFunction, 3000);
+            setTimeout(showNext, 4000);
+
+        }
+        else if (number === 0 && j == questions.length - 1 ) {
+
+            //stop();
+            //alert("time is up!");
+            wrongAs++;
+            //console.log("wrong answers: " + wrongAs);
+            $(questions[j]).html("<h4>Your time is up! The correct answer was: <strong>" + answers[j] + "</strong></h4><img src=" + images[j] + " width='300px'>")
+            setTimeout(finalScore, 4000);
 
         }
     }
@@ -98,7 +108,7 @@ $(document).ready(function () {
     }
 
     function finalScore(){
-        $(questions[j]).html("<h4>You correctly answered " + correctAs + " of " + questions.length + " questions</h4>")
+        $(questions[j]).html("<h4>You correctly answered <strong>" + correctAs + "</strong> of <strong>" + questions.length + "</strong> questions</h4>")
     }
 
 })
